@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AUTOX</title>
+  <style>
+    .container {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .icon {
+      width: 128px;
+      height: 128px;
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    p {
+      color: #666;
+    }
+
+    #toggleButton {
+      padding: 10px 20px;
+      font-size: 16px;
+      color: white;
+      background-color: #4CAF50; /* Green */
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      outline: none;
+    }
+
+    #toggleButton.stop {
+      background-color: #F44336; /* Red */
+    }
+  </style>
+  <script src="popup.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <img src="icons/icon128.png" alt="AUTO X" class="icon">
+    <h2>AUTOX</h2>
+    <p>Made by AZMI</p>
+    <button id="toggleButton">ON/OFF</button>
+    
+    
+  </div>
+
+  <script>
+    // Ensure this script block comes after the button element in the HTML
+    document.addEventListener('DOMContentLoaded', function () {
+      const toggleButton = document.getElementById('toggleButton');
+      toggleButton.addEventListener('click', function() {
+        if (toggleButton.classList.contains('stop')) {
+          toggleButton.classList.remove('stop');
+          toggleButton.textContent = 'START';
+          // Add logic to stop scrolling
+        } else {
+          toggleButton.classList.add('stop');
+          toggleButton.textContent = 'STOP';
+          // Add logic to start scrolling
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
